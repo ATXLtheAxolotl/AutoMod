@@ -23,7 +23,6 @@ class AutoMod {
           this.api.getLogger().success('whitelist.json created!')
         })
       }
-      
     }
 
     async onEnabled(): Promise<void> {
@@ -90,6 +89,7 @@ class AutoMod {
       if(BannedDevices.includes(player.getDevice())) return this.kickPlayer(player, KickMessages.BannedDevice.replace(new RegExp("{device}", "g"), player.getDevice()));
       try {
         const auth = await this.auth.getXboxToken()
+        
         if(UseGameScore || UseReputation) {
           const data = (await axios.get(`https://profile.xboxlive.com/users/xuid(${player.getXuid()})/profile/settings?settings=Gamerscore,XboxOneRep`, {
             headers:{
@@ -108,11 +108,14 @@ class AutoMod {
             "Accept-Language": "en-US"
           }
         })).data
-  
-        if(!req.titles[0]) return this.kickPlayer(player, KickMessages.PrivateHistory)
-  
-        if(!req.titles[0].name.includes("Minecraft")) return this.kickPlayer(player, KickMessages.InvalidGame.replace(new RegExp('game', 'g'), req.titles[0].name))
-        if(BannedDevices.includes(req.titles[0].name.replace(new RegExp('Minecraft for ', 'g'), ''))) return this.kickPlayer(player, KickMessages.DeviceSpoofing)
+        
+        if(!req.titles.length) return this.kickPlayer(player, KickMessages.PrivateHistory)
+        for(var i = 0; i < req.titles.length; i++) {
+          const date = new Date(req.titles[i].titleHistory.lastTimePlayed)
+          if(date.getTime() <= Date.now()-1800000) return;
+
+          if(BannedDevices.includes(req.titles[i].name.replace(new RegExp('Minecraft for ', 'g'), ''))) return this.kickPlayer(player, KickMessages.DeviceSpoofing)
+        }
       }
       catch (err) {
         console.error(err);
