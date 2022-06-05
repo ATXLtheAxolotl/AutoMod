@@ -1,0 +1,20 @@
+{
+    "BannedDevices": ["Windows", "Unknown", "Android"],
+    "KickMessages": {
+        "BannedDevice": "You have been kicked from (epic realm name) for:\nPlaying on {device}.",
+        "PrivateHistory": "A Private Title History.",
+        "InvalidGame": "On Xbox API, you are playing {game}. Make sure you do not have another device active.",
+        "DeviceSpoofing": "Device spoofing.",
+        "LowGameScore": "Your game score is to low. You have {score} while you need a score of 10.",
+        "LowReputation": "You have a reputation of {reputation} on Xbox."
+    },
+    "Discord": {
+        "enabled": false,
+        "channel": ""
+    },
+    "XboxMessage": false,
+    "UseGameScore": false,
+    "UseReputation": false,
+    "GameScoreRequirement": 1000,
+    "ReputationRequirement": "GoodPlayer"
+}

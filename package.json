@@ -1,0 +1,35 @@
+{
+  "name": "automod",
+  "displayName": "AutoMod",
+  "color": "red",
+  "version": "1.0.0",
+  "description": "AutoMod for BeRP",
+  "devMode": true,
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node src/index.ts",
+    "start": "node dist/index.js"
+  },
+  "author": "BelugaTheAxolotl#2134 || https://discord.com/users/566770844286844953",
+  "license": "MIT",
+  "dependencies": {
+    "@azure/msal-node": "^1.2.0",
+    "axios": "^0.26.1",
+    "discord.js": "^13.6.0",
+    "prismarine-auth": "^1.5.1",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.6.4"
+  },
+  "devDependencies": {
+    "@types/node": "^15.12.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ATXLtheAxolotl/AutoMod.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ATXLtheAxolotl/AutoMod/issues"
+  },
+  "homepage": "https://github.com/ATXLtheAxolotl/AutoMod#readme"
+}
