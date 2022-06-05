@@ -12,4 +12,4 @@ This plugin is **almost** complete, here is what is the to-do list.
 - Whitelist command in discord
 - Unwhitelist command in discord
 - ~~More accurate anti-device spoofing~~
-- Provide ability to customize how far back to check for device spoofing
+- ~~Provide ability to customize how far back to check for device spoofing~~

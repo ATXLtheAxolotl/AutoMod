@@ -16,5 +16,6 @@
     "UseGameScore": false,
     "UseReputation": false,
     "GameScoreRequirement": 1000,
+    "DeviceSpoofFetchBackTime": 30,
     "ReputationRequirement": "GoodPlayer"
 }

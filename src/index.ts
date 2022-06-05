@@ -4,7 +4,7 @@ import { Authflow } from 'prismarine-auth'
 import { MessageEmbed } from 'discord.js';
 import axios from 'axios'
 import fs from 'fs'
-const { BannedDevices, KickMessages, Discord, UseGameScore, GameScoreRequirement, UseReputation, ReputationRequirement, XboxMessage } = require('../config.json')
+const { BannedDevices, KickMessages, Discord, UseGameScore, GameScoreRequirement, UseReputation, ReputationRequirement, XboxMessage, DeviceSpoofFetchBackTime } = require('../config.json')
 
 class AutoMod {
     private api: PluginApi
@@ -112,7 +112,7 @@ class AutoMod {
         if(!req.titles.length) return this.kickPlayer(player, KickMessages.PrivateHistory)
         for(var i = 0; i < req.titles.length; i++) {
           const date = new Date(req.titles[i].titleHistory.lastTimePlayed)
-          if(date.getTime() <= Date.now()-1800000) return;
+          if(date.getTime() <= Date.now() - (60000 * DeviceSpoofFetchBackTime)) return;
 
           if(BannedDevices.includes(req.titles[i].name.replace(new RegExp('Minecraft for ', 'g'), ''))) return this.kickPlayer(player, KickMessages.DeviceSpoofing)
         }
