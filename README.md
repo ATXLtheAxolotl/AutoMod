@@ -11,3 +11,4 @@ This AutoMod for **BeRP** includes:
 This plugin is **almost** complete, here is what is the to-do list.
 - Whitelist command in discord
 - Unwhitelist command in discord
+- More accurate anti-device spoofing
