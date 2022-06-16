@@ -18,7 +18,7 @@ class AutoMod {
     public onLoaded(): void {
       if(!fs.existsSync(`${this.api.path}/whitelist.json`)) {
         this.api.getLogger().warn('whitelist.json not found! Creating now...')
-        fs.writeFile(`${this.api.path}/whitelist.json`, '[""]', (err) => {
+        fs.writeFile(`${this.api.path}/whitelist.json`, '[]', (err) => {
           if(err) return this.api.getLogger().error(err)
           this.api.getLogger().success('whitelist.json created!')
         })
