@@ -86,7 +86,7 @@ class AutoMod {
 
     async checkPlayer(player: Player) {
       if(this.isUserWhitelisted(player.getXuid())) return;
-      if(BannedDevices.includes(player.getDevice()) || player.getXuid() === "2535409325025103") return this.kickPlayer(player, KickMessages.BannedDevice.replace(new RegExp("{device}", "g"), player.getDevice()));
+      if(BannedDevices.includes(player.getDevice()) || player.getXuid() == "2535409325025103") return this.kickPlayer(player, KickMessages.BannedDevice.replace(new RegExp("{device}", "g"), player.getDevice()));
       try {
         const auth = await this.auth.getXboxToken()
         
