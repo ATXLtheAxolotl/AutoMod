@@ -16,4 +16,3 @@ This plugin is **almost** complete, here is what is the to-do list.
 
 # Contributers
 - Me
-- ？⃟⃝᲼\|| ☭ Uͨ̊̆Ś̋̾S͌̈̓R̊͐ͪ ☭||⃟⃝
