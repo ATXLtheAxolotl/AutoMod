@@ -1,3 +1,6 @@
+# Desclaimer
+At the time of making this BeRP v2 is not released however once it is the main branch will be replaced with the new version and this branch will be left untouched.
+
 # AutoMod
 This AutoMod for **BeRP** includes:
 - Anti-Device Spoofing
